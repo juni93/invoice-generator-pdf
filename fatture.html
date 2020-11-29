@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.js" integrity="sha512-TtLC7VxmsBn2S6vL3Ib403LU+Gf8cH4wf7UdOxRBRKVrtLXPjA5Tv4/hY7BwIeGAJ/YKNjRtjG4nTzYD/snZOQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js" integrity="sha512-vv3EN6dNaQeEWDcxrKPFYSFba/kgm//IUnvLPMPadaUf5+ylZyx4cKxuc4HdBf0PPAlM7560DV63ZcolRJFPqA==" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col">
+                <form class="form" id="mainForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check-inline">
+                                <input type="radio" class="form-check-input" id="company1">
+                                <label class="form-check-label" for="company1">SASU MSF</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" class="form-check-input" id="company2">
+                                <label class="form-check-label" for="company2">SASU IT RENOVATION</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label for="dateFacture" class="col col-form-label">Date</label>
+                                <div class="col">
+                                    <input type="date" class="form-control" id="dateFacture">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="factureNo" class="col col-form-label">FACTURE NO</label>
+                                <div class="col">
+                                    <input type="number" class="form-control" id="factureNo" placeholder="325">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <label for="company">Company Name</label>
+                            <input type="text" class="form-control" id="companyName">
+                            <label for="company">Address</label>
+                            <input type="text" class="form-control" id="companyAddress">
+                            <label for="company">Cap & City</label>
+                            <input type="text" class="form-control" id="companyCap">
+                        </div>
+                    </div>
+                    <table class="table" id="mainTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Discription</th>
+                                <th scope="col">QTY</th>
+                                <th scope="col">P UNIT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                    <input type="hidden" id="totalVat" value="">
+                    <button type="button" class="btn btn-info" id="newLine">New Line</button>
+                </form>
+                <button type="button" class="btn btn-success btn-block mt-2" onclick="printPdf()">Create PDF</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./resources/js/main.js" defer></script>
+
+</html>
